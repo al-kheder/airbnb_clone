@@ -18,6 +18,8 @@ function Searchbar() {
     key: "selection",
   };
 
+  
+
   const handlSelecteDate = (ranges: RangeKeyDict) => {
     setStartDate(ranges.selection.startDate as Date);
     setEndtDate(ranges.selection.endDate as Date);
@@ -87,6 +89,7 @@ function Searchbar() {
       )}
     </>
   );
-}
+} 
 
 export default Searchbar;
+
