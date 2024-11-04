@@ -7,7 +7,7 @@ import { DateRangePicker, RangeKeyDict } from "react-date-range";
 import { UsersIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 
-function Searchbar() {
+function Searchbar({placeholder}:{placeholder?:string}) {
   const [input, setInput] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndtDate] = useState(new Date());
@@ -18,8 +18,6 @@ function Searchbar() {
     key: "selection",
   };
 
-  
-
   const handlSelecteDate = (ranges: RangeKeyDict) => {
     setStartDate(ranges.selection.startDate as Date);
     setEndtDate(ranges.selection.endDate as Date);
@@ -29,7 +27,7 @@ function Searchbar() {
       <div className="flex items-center md:border-2 rounded-full py-2 md:shadow-sm">
         <input
           type="text"
-          placeholder="Start your Search"
+          placeholder={placeholder || "Start your Search"}
           className="text-sm text-gray-600 placeholder-gray-400 flex-grow pl-4 5 bg-transparent outline-none"
           onChange={(e) => setInput(e.target.value)}
         />
@@ -78,7 +76,10 @@ function Searchbar() {
               Cancel
             </button>
             <Link
-              href="/search"
+              href={{
+                pathname: "/search",
+                search: `?location=${input}&startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}&numOfGuests=${numOfGuests}`,
+              }}
               onClick={() => setInput("")}
               className="flex-grow text-red-400"
             >
@@ -89,7 +90,6 @@ function Searchbar() {
       )}
     </>
   );
-} 
+}
 
 export default Searchbar;
-
