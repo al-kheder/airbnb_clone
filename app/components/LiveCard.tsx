@@ -4,7 +4,7 @@ import Image from "next/image";
 
 type LiveCardType = LiveItem;
 
-function LiveCard({ items }) {
+function LiveCard({ items }: { items: LiveCardType }) {
   const { name, imageUrl }: LiveCardType = items;
   return (
     <div className="cursor-pointer hover:scale-105 transform transition duration-300  ease-out">

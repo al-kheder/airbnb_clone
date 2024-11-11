@@ -1,6 +1,7 @@
 export const getExplore = async () => {
   try {
     const res = await fetch(
+      
       `https://cdn.rawgit.com/abbassiddiqi/airbnb-api/bbd1300a/flats.json`
     );
 
@@ -18,21 +19,62 @@ export const getExplore = async () => {
 export const getLiveDate = async () => {
   try {
     const res = await fetch(
-      `https://cdn.rawgit.com/abbassiddiqi/airbnb-api/bbd1300a/flats.json`
+      // `http://127.0.0.1:5001/properties`
+     `https://cdn.rawgit.com/abbassiddiqi/airbnb-api/bbd1300a/flats.json`
     );
-
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
-
     const liveData = await res.json();
-  
     // console.log('explor data from the api ts:',exploreData);
     return liveData;
   } catch (error) {
     console.log("error from api ts getLiveData: ", error);
   }
 };
+
+
+//have to call the api to get the data
+export const getProperties = async () => {
+  try {
+    const res = await fetch(
+      
+    `http://127.0.0.1:5001/properties`
+    );
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
+    const properties = await res.json();
+     //console.log('explor data from the api ts:',properties);
+    return properties;
+  } catch (error) {
+    console.log("error from api ts getProperties: ", error);
+  }
+}
+
+
+
+export const getSearchResults = async () => { 
+  try {
+    const res = await fetch(
+      
+    `https://cdn.rawgit.com/abbassiddiqi/airbnb-api/bbd1300a/flats.json`
+    );
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
+    const searchResults = await res.json();
+    // console.log('explor data from the api ts:',exploreData);
+    return searchResults;
+  } catch (error) {
+    console.log("error from api ts getSearchResults: ", error);
+  }
+};
+
 
 // limited request
 /*     const url = 'https://airbnb13.p.rapidapi.com/search-geo?ne_lat=52.51&ne_lng=13.41&sw_lat=52.41&sw_lng=13.31&checkin=2025-01-12&checkout=2025-01-13&adults=1&children=0&infants=0&pets=0&page=1&currency=USD';

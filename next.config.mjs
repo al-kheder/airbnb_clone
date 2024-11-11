@@ -19,8 +19,8 @@ const nextConfig = {
           hostname:'img.freepik.com',
           port:'',
           pathname:'/**'
-        }
-      ]
+        }, 
+      ], domains: ['127.0.0.1']
       
       },
 };

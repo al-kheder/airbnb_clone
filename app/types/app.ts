@@ -12,5 +12,20 @@ export type LiveItem ={
     imageUrl:string,
 }
 
+export type ListingCardItem ={
+    id:number,
+    imageUrl :string,
+    location:string,
+    name:string,
+    price_per_night:number,
+    priceCurrency:string,
+    description:string,
+    star:number,
+    total:string,
+    lng:number,
+    lat: number,
+}
+
 export type ExplorData = ExplorItem[]
 export type LiveData = LiveItem[]
+export type SearchResults = ListingCardItem[]

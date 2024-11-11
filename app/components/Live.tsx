@@ -6,7 +6,7 @@ import MainHeading from "./MainHeading";
 
 async function Live() {
   const liveData = await getLiveDate();
-  console.log("live data", liveData);
+  console.log("live data from the component Live()", liveData);
   return (
     <section className="pt-6">
       <div className="mx-8"> <MainHeading title='Live Anywhere' /> 

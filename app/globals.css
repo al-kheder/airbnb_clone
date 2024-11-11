@@ -10,8 +10,11 @@
   .no-scrollbar::-webkit-scrollbar{
     display: none;
   }
-}
   .no-scrollbar::-webkit-scrollbar{
-   scrollbar-width: none;  /* Firefox*/
-   -m-overflow-style:none  /* IE and Edge*/
+    scrollbar-width: none;  /* Firefox*/
+    -m-overflow-style:none  /* IE and Edge*/
   }
+  .filter-btn {
+    @apply  px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 transition transform duration-100 ease-out;
+  }
+}
