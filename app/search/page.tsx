@@ -57,29 +57,25 @@ const SearchResult = async ({
                 </button>
               ))}
             </div>
-            {fakeDataFromFlask.map((listing) => (
-              <ListingCard
-                key={listing.id}
-                imageUrl={listing.image_url}
-                location={listing.location}
-                name={listing.name}
-                price_per_night={listing.price_per_night}
-                priceCurrency={listing.priceCurrency}
-                description={listing.description}
-                star={listing.star}
-                total={listing.total}
-                id={0}
-              />
-            ))}
-            {/*SearchResult.map((listing) => (
-              <ListingCard
-                key={listing.id}
-                img={listing.imageUrl}
-                name={listing.name}
-                location={listing.location}
-                description={listing.description}
-              />
-            ))*/}
+            <div>
+              {fakeDataFromFlask.map((listing) => (
+                <ListingCard
+                  key={listing.id}
+                  imageUrl={listing.image_url}
+                  location={listing.location}
+                  name={listing.name}
+                  price_per_night={listing.price_per_night}
+                  priceCurrency={listing.priceCurrency}
+                  description={listing.description}
+                  star={listing.star}
+                  total={listing.total}
+                  id={0}
+                />
+              ))}
+            </div>
+            <div >
+             
+            </div>
           </div>
         </section>
       </main>
